@@ -31,3 +31,13 @@
 # Debug files
 *.dSYM/
 *.su
+
+samsung/hawk/*
+samsung/jazz/
+
+.tmp_versions/*
+Module.symvers
+modules.order
+*.o.cmd
+*.mod.c
+*.ko.cmd
