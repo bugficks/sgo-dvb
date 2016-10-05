@@ -915,7 +915,7 @@ static int __init _module_init(void)
         u8 *p = (u8*)off_dvb_demux_do_ioctl;
         if(p[3] == 0xE3 && p[7] == 0xE3)
         {
-            u8 rd = p[1] >> 8;
+            u8 rd = p[1] >> 4;
             u32 patch[] = 
             {
                 arm_make_mov_rd(ARM_OP_MOVW, rd, ((u32)dvb_demux_do_ioctl_hook) & 0xFFFF),
@@ -973,7 +973,7 @@ static void __exit _module_exit(void)
         u8 *p = (u8*)off_dvb_demux_do_ioctl;
         if(p[3] == 0xE3 && p[7] == 0xE3)
         {
-            u8 rd = p[1] >> 8;
+            u8 rd = p[1] >> 4;
             u32 patch[] = 
             {
                 arm_make_mov_rd(ARM_OP_MOVW, rd, ((u32)dvb_demux_do_ioctl_org) & 0xFFFF),
